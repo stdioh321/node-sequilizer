@@ -1,0 +1,26 @@
+{
+  "name": "node-sequilizer",
+  "version": "1.0.0",
+  "description": "Testing Node Sequilizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stdioh321/node-sequilizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stdioh321/node-sequilizer/issues"
+  },
+  "homepage": "https://github.com/stdioh321/node-sequilizer#readme",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  }
+}

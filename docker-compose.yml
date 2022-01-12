@@ -1,0 +1,39 @@
+version: '3.3'
+
+services:
+  my_db:
+    container_name: 'my_db'
+    image: mysql:5.7.36
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=db
+
+    volumes:
+      - ./db:/tmp/db
+      - ./mysql:/var/lib/mysql
+      
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+      interval: 5s
+    logging:
+      driver: none
+    networks:
+      - mynet
+  app:
+    container_name: 'app'
+    image: node:16.13.2-alpine3.15
+    # entrypoint: /bin/sh
+    command: sh -c "npm install && node index.js"
+    working_dir: /app
+    volumes:
+      - ./:/app/
+    depends_on:
+      my_db:
+        condition: service_healthy
+    networks:
+      - mynet
+networks:
+  mynet:
+    driver: bridge
