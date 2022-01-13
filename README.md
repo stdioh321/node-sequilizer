@@ -1,6 +1,9 @@
 # node-sequelize
 Testing Node Sequelize
 
+# Requirements
+1. [docker 🧲](https://docs.docker.com/get-docker/)
+2. [docker-compose 🧲](https://docs.docker.com/compose/install/)
 
 # Run 🏃🏃🏃
 Run it a couple times
